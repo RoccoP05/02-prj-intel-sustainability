@@ -2,9 +2,22 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f5f7fb;
   color: #222;
+}
+
+.timeline-note {
+  margin: 0;
+  padding: 16px 20px;
+  color: #2a2a2a;
+  font-size: 0.95rem;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(20, 40, 80, 0.08);
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header {
@@ -39,13 +52,20 @@ section {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 section::-webkit-scrollbar {
-  display: none;
+  height: 12px;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.24);
+  border-radius: 999px;
+}
+
+section::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 section .card {
@@ -89,7 +109,8 @@ section .card-head h3 {
 
 section .card-head img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
   border-radius: 14px;
 }
@@ -114,6 +135,7 @@ section .card:hover p {
 
 @media (max-width: 780px) {
   section {
+    flex-wrap: wrap;
     justify-content: center;
     overflow-x: visible;
   }
