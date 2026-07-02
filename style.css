@@ -27,9 +27,22 @@ header {
 }
 
 header img {
-  max-width: 150px;
+  width: 180px;
+  max-width: 100%;
+  height: auto;
   display: block;
   margin-bottom: 16px;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.logo-link {
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.logo-link:hover img {
+  transform: translateY(-3px) scale(1.03);
+  opacity: 0.9;
 }
 
 header h1 {
